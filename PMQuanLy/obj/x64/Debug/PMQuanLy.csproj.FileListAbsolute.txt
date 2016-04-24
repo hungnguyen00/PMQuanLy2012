@@ -1,0 +1,6 @@
+E:\workspace\PMQuanLy\PMQuanLy\obj\x64\Debug\PMQuanLy.csprojResolveAssemblyReference.cache
+E:\workspace\PMQuanLy\PMQuanLy\obj\x64\Debug\PMQuanLy.MainForm.resources
+E:\workspace\PMQuanLy\PMQuanLy\obj\x64\Debug\PMQuanLy.LoginForm.resources
+E:\workspace\PMQuanLy\PMQuanLy\obj\x64\Debug\PMQuanLy.Properties.Resources.resources
+E:\workspace\PMQuanLy\PMQuanLy\obj\x64\Debug\PMQuanLy.csproj.GenerateResource.Cache
+E:\workspace\PMQuanLy\PMQuanLy\obj\x64\Debug\PMQuanLy.exe.licenses
