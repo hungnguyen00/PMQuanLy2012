@@ -13,7 +13,7 @@ namespace PMQuanLy
     public partial class LoginForm : Form
     {
         MemberModel mMember;
-        bool login_flg = false;
+        bool login_flg = true;
         public LoginForm()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace PMQuanLy
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            login_flg = mMember.isLoginSuccess(txt_username.Text.ToString(), txt_password.Text.ToString());
+            //login_flg = mMember.isLoginSuccess(txt_username.Text.ToString(), txt_password.Text.ToString());
             if (login_flg == true)
             {
                 MainForm fMain = new MainForm();

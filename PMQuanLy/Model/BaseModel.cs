@@ -14,7 +14,8 @@ namespace PMQuanLy.Model
         SQLiteDataAdapter adapter;
         DataTable dt1;
 
-        String cnnString = System.IO.Directory.GetCurrentDirectory() + "/../../quanly_db.db";
+        //String cnnString = System.IO.Directory.GetCurrentDirectory() + "/../../quanly_db.db";
+        String cnnString = System.IO.Directory.GetCurrentDirectory() + "/quanly_db.db";
 
         private void startConnect()
         {
@@ -26,7 +27,7 @@ namespace PMQuanLy.Model
 
                 cmd.Connection = conn;
                 adapter.SelectCommand = cmd;
-                //conn.ConnectionString = @"data source=E:\visual_workspace\PMQuanLy\PMQuanLy\quanly_db.sqlite";
+                //conn.ConnectionString = @"data source=E:\visual_workspace\PMQuanLy2012\PMQuanLy\quanly_db.sqlite";
                 conn.ConnectionString = @"data source=" + cnnString;
             }
         }

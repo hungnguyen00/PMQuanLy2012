@@ -34,8 +34,8 @@ namespace PMQuanLy
         {
             mProduct = new ListProductModel();
             mInventory = new InventoryModel();
-            xtraTabControl1.SelectedTabPageIndex = 2;
-            LoadDataOrder();
+            xtraTabControl1.SelectedTabPageIndex = 0;
+            LoadDataProduct();
         }
         private void LoadDataProduct()
         {
