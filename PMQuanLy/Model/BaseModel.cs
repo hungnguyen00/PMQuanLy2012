@@ -14,8 +14,8 @@ namespace PMQuanLy.Model
         SQLiteDataAdapter adapter;
         DataTable dt1;
 
-        //String cnnString = System.IO.Directory.GetCurrentDirectory() + "/../../quanly_db.db";
-        String cnnString = System.IO.Directory.GetCurrentDirectory() + "/quanly_db.db";
+        String cnnString = System.IO.Directory.GetCurrentDirectory() + "/../../quanly_db.db";
+        //String cnnString = System.IO.Directory.GetCurrentDirectory() + "/quanly_db.db";
 
         private void startConnect()
         {

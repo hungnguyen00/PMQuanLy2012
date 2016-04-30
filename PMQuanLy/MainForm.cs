@@ -287,5 +287,15 @@ namespace PMQuanLy
             MessageBox.Show("Order Successfully!!!");
         }
 
+        private void txtInventorySearchBarCode_TextChanged(object sender, EventArgs e)
+        {
+            String filter_string = "1 = 1 ";
+            String bar_code = txtInventorySearchBarCode.Text.ToString();
+            if (!bar_code.Equals(""))
+            {
+                filter_string += String.Format(" AND [qr_code] LIKE '%{0}%'", bar_code);
+            }
+            gridInventory.ActiveFilterString = filter_string;
+        }
     }
 }

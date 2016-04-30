@@ -53,11 +53,14 @@
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarOrder = new DevExpress.XtraNavBar.NavBarItem();
             this.panelProductDetail = new DevExpress.XtraEditors.PanelControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtInventorySearchBarCode = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.panelProductDetailGrid = new DevExpress.XtraEditors.PanelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.gridProductDetail = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridInventory = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
@@ -69,11 +72,11 @@
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.panelOrder = new DevExpress.XtraEditors.PanelControl();
-            this.btnOrderSubmit = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnOrderSubmit = new DevExpress.XtraEditors.SimpleButton();
             this.lblSumWeight = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.gv3 = new DevExpress.XtraGrid.GridControl();
@@ -86,11 +89,9 @@
             this.btnOrderProductDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.gv2 = new DevExpress.XtraGrid.GridControl();
             this.gridOrderOrderInventory = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colname1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colproduct_code2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colqr_code2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colweight2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcreated_date2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnOrderInventoryDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
@@ -113,10 +114,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelProductDetail)).BeginInit();
             this.panelProductDetail.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInventorySearchBarCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelProductDetailGrid)).BeginInit();
             this.panelProductDetailGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProductDetail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -229,6 +232,7 @@
             // 
             // panelProductDetail
             // 
+            this.panelProductDetail.Controls.Add(this.groupBox1);
             this.panelProductDetail.Controls.Add(this.labelControl3);
             this.panelProductDetail.Controls.Add(this.panelProductDetailGrid);
             this.panelProductDetail.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -236,6 +240,33 @@
             this.panelProductDetail.Name = "panelProductDetail";
             this.panelProductDetail.Size = new System.Drawing.Size(974, 557);
             this.panelProductDetail.TabIndex = 7;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtInventorySearchBarCode);
+            this.groupBox1.Controls.Add(this.labelControl12);
+            this.groupBox1.Location = new System.Drawing.Point(2, 64);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(970, 78);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Search";
+            // 
+            // txtInventorySearchBarCode
+            // 
+            this.txtInventorySearchBarCode.Location = new System.Drawing.Point(67, 34);
+            this.txtInventorySearchBarCode.Name = "txtInventorySearchBarCode";
+            this.txtInventorySearchBarCode.Size = new System.Drawing.Size(628, 20);
+            this.txtInventorySearchBarCode.TabIndex = 1;
+            this.txtInventorySearchBarCode.TextChanged += new System.EventHandler(this.txtInventorySearchBarCode_TextChanged);
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Location = new System.Drawing.Point(22, 37);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(39, 13);
+            this.labelControl12.TabIndex = 0;
+            this.labelControl12.Text = "Barcode";
             // 
             // labelControl3
             // 
@@ -253,9 +284,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelProductDetailGrid.Controls.Add(this.labelControl4);
             this.panelProductDetailGrid.Controls.Add(this.gridProductDetail);
-            this.panelProductDetailGrid.Location = new System.Drawing.Point(2, 62);
+            this.panelProductDetailGrid.Location = new System.Drawing.Point(2, 146);
             this.panelProductDetailGrid.Name = "panelProductDetailGrid";
-            this.panelProductDetailGrid.Size = new System.Drawing.Size(970, 493);
+            this.panelProductDetailGrid.Size = new System.Drawing.Size(970, 409);
             this.panelProductDetailGrid.TabIndex = 1;
             // 
             // labelControl4
@@ -269,19 +300,20 @@
             // 
             this.gridProductDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridProductDetail.Location = new System.Drawing.Point(2, 2);
-            this.gridProductDetail.MainView = this.gridView2;
+            this.gridProductDetail.MainView = this.gridInventory;
             this.gridProductDetail.Name = "gridProductDetail";
-            this.gridProductDetail.Size = new System.Drawing.Size(966, 489);
+            this.gridProductDetail.Size = new System.Drawing.Size(966, 405);
             this.gridProductDetail.TabIndex = 0;
             this.gridProductDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.gridInventory});
             // 
-            // gridView2
+            // gridInventory
             // 
-            this.gridView2.GridControl = this.gridProductDetail;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsBehavior.Editable = false;
-            this.gridView2.OptionsView.ShowAutoFilterRow = true;
+            this.gridInventory.GridControl = this.gridProductDetail;
+            this.gridInventory.Name = "gridInventory";
+            this.gridInventory.OptionsBehavior.Editable = false;
+            this.gridInventory.OptionsFilter.AllowFilterEditor = false;
+            this.gridInventory.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             // 
             // xtraTabControl1
             // 
@@ -379,7 +411,6 @@
             // panelOrder
             // 
             this.panelOrder.AutoSize = true;
-            this.panelOrder.Controls.Add(this.btnOrderSubmit);
             this.panelOrder.Controls.Add(this.labelControl5);
             this.panelOrder.Controls.Add(this.panelControl2);
             this.panelOrder.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -387,15 +418,6 @@
             this.panelOrder.Name = "panelOrder";
             this.panelOrder.Size = new System.Drawing.Size(974, 557);
             this.panelOrder.TabIndex = 7;
-            // 
-            // btnOrderSubmit
-            // 
-            this.btnOrderSubmit.Location = new System.Drawing.Point(362, 527);
-            this.btnOrderSubmit.Name = "btnOrderSubmit";
-            this.btnOrderSubmit.Size = new System.Drawing.Size(108, 23);
-            this.btnOrderSubmit.TabIndex = 4;
-            this.btnOrderSubmit.Text = "submit";
-            this.btnOrderSubmit.Click += new System.EventHandler(this.btnOrderSubmit_Click);
             // 
             // labelControl5
             // 
@@ -437,6 +459,7 @@
             this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Controls.Add(this.btnOrderSubmit);
             this.panelControl1.Controls.Add(this.lblSumWeight);
             this.panelControl1.Controls.Add(this.labelControl11);
             this.panelControl1.Controls.Add(this.gv3);
@@ -446,16 +469,25 @@
             this.panelControl1.Size = new System.Drawing.Size(468, 456);
             this.panelControl1.TabIndex = 0;
             // 
+            // btnOrderSubmit
+            // 
+            this.btnOrderSubmit.Location = new System.Drawing.Point(17, 249);
+            this.btnOrderSubmit.Name = "btnOrderSubmit";
+            this.btnOrderSubmit.Size = new System.Drawing.Size(108, 23);
+            this.btnOrderSubmit.TabIndex = 4;
+            this.btnOrderSubmit.Text = "submit";
+            this.btnOrderSubmit.Click += new System.EventHandler(this.btnOrderSubmit_Click);
+            // 
             // lblSumWeight
             // 
-            this.lblSumWeight.Location = new System.Drawing.Point(342, 257);
+            this.lblSumWeight.Location = new System.Drawing.Point(342, 254);
             this.lblSumWeight.Name = "lblSumWeight";
             this.lblSumWeight.Size = new System.Drawing.Size(0, 13);
             this.lblSumWeight.TabIndex = 5;
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(278, 257);
+            this.labelControl11.Location = new System.Drawing.Point(278, 254);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(61, 13);
             this.labelControl11.TabIndex = 4;
@@ -530,7 +562,7 @@
             this.product_name.Name = "product_name";
             this.product_name.Visible = true;
             this.product_name.VisibleIndex = 0;
-            this.product_name.Width = 203;
+            this.product_name.Width = 281;
             // 
             // product_product_code
             // 
@@ -538,7 +570,7 @@
             this.product_product_code.Name = "product_product_code";
             this.product_product_code.Visible = true;
             this.product_product_code.VisibleIndex = 1;
-            this.product_product_code.Width = 115;
+            this.product_product_code.Width = 195;
             // 
             // product_weight
             // 
@@ -546,7 +578,7 @@
             this.product_weight.Name = "product_weight";
             this.product_weight.Visible = true;
             this.product_weight.VisibleIndex = 2;
-            this.product_weight.Width = 53;
+            this.product_weight.Width = 157;
             // 
             // gridColumn1
             // 
@@ -555,6 +587,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 3;
+            this.gridColumn1.Width = 63;
             // 
             // btnOrderProductDelete
             // 
@@ -586,23 +619,13 @@
             // 
             this.gridOrderOrderInventory.ActiveFilterEnabled = false;
             this.gridOrderOrderInventory.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colname1,
             this.colproduct_code2,
             this.colqr_code2,
             this.colweight2,
-            this.colcreated_date2,
             this.gridColumn2});
             this.gridOrderOrderInventory.GridControl = this.gv2;
             this.gridOrderOrderInventory.Name = "gridOrderOrderInventory";
             this.gridOrderOrderInventory.OptionsView.ShowGroupPanel = false;
-            // 
-            // colname1
-            // 
-            this.colname1.FieldName = "name";
-            this.colname1.Name = "colname1";
-            this.colname1.OptionsColumn.AllowEdit = false;
-            this.colname1.Visible = true;
-            this.colname1.VisibleIndex = 4;
             // 
             // colproduct_code2
             // 
@@ -611,6 +634,7 @@
             this.colproduct_code2.OptionsColumn.AllowEdit = false;
             this.colproduct_code2.Visible = true;
             this.colproduct_code2.VisibleIndex = 2;
+            this.colproduct_code2.Width = 220;
             // 
             // colqr_code2
             // 
@@ -619,6 +643,7 @@
             this.colqr_code2.OptionsColumn.AllowEdit = false;
             this.colqr_code2.Visible = true;
             this.colqr_code2.VisibleIndex = 0;
+            this.colqr_code2.Width = 345;
             // 
             // colweight2
             // 
@@ -627,14 +652,7 @@
             this.colweight2.OptionsColumn.AllowEdit = false;
             this.colweight2.Visible = true;
             this.colweight2.VisibleIndex = 1;
-            // 
-            // colcreated_date2
-            // 
-            this.colcreated_date2.FieldName = "created_date";
-            this.colcreated_date2.Name = "colcreated_date2";
-            this.colcreated_date2.OptionsColumn.AllowEdit = false;
-            this.colcreated_date2.Visible = true;
-            this.colcreated_date2.VisibleIndex = 3;
+            this.colweight2.Width = 65;
             // 
             // gridColumn2
             // 
@@ -642,7 +660,8 @@
             this.gridColumn2.ColumnEdit = this.btnOrderInventoryDelete;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 5;
+            this.gridColumn2.VisibleIndex = 3;
+            this.gridColumn2.Width = 66;
             // 
             // btnOrderInventoryDelete
             // 
@@ -692,7 +711,7 @@
             this.txtOrderSearchProductCode.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtOrderSearchProductCode.Location = new System.Drawing.Point(325, 125);
             this.txtOrderSearchProductCode.Name = "txtOrderSearchProductCode";
-            this.txtOrderSearchProductCode.Size = new System.Drawing.Size(183, 20);
+            this.txtOrderSearchProductCode.Size = new System.Drawing.Size(161, 20);
             this.txtOrderSearchProductCode.TabIndex = 10;
             this.txtOrderSearchProductCode.TextChanged += new System.EventHandler(this.txtOrderSearchProductCode_TextChanged);
             // 
@@ -734,7 +753,7 @@
             this.txtOrderQrCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtOrderQrCode.Location = new System.Drawing.Point(24, 40);
             this.txtOrderQrCode.Name = "txtOrderQrCode";
-            this.txtOrderQrCode.Size = new System.Drawing.Size(484, 20);
+            this.txtOrderQrCode.Size = new System.Drawing.Size(462, 20);
             this.txtOrderQrCode.TabIndex = 4;
             this.txtOrderQrCode.TextChanged += new System.EventHandler(this.txtQrCode_TextChanged);
             // 
@@ -748,7 +767,7 @@
             this.gv1.Location = new System.Drawing.Point(2, 176);
             this.gv1.MainView = this.gridOrderInventory;
             this.gv1.Name = "gv1";
-            this.gv1.Size = new System.Drawing.Size(527, 288);
+            this.gv1.Size = new System.Drawing.Size(492, 288);
             this.gv1.TabIndex = 2;
             this.gv1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridOrderInventory});
@@ -823,11 +842,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelProductDetail)).EndInit();
             this.panelProductDetail.ResumeLayout(false);
             this.panelProductDetail.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInventorySearchBarCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelProductDetailGrid)).EndInit();
             this.panelProductDetailGrid.ResumeLayout(false);
             this.panelProductDetailGrid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridProductDetail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
@@ -888,7 +910,7 @@
         private DevExpress.XtraEditors.PanelControl panelProductDetailGrid;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraGrid.GridControl gridProductDetail;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridInventory;
         private DevExpress.XtraNavBar.NavBarItem navBarOrder;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
@@ -927,8 +949,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colqr_code2;
         private DevExpress.XtraGrid.Columns.GridColumn colweight2;
         private DevExpress.XtraGrid.Columns.GridColumn colproduct_code2;
-        private DevExpress.XtraGrid.Columns.GridColumn colcreated_date2;
-        private DevExpress.XtraGrid.Columns.GridColumn colname1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit btnOrderInventoryDelete;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -942,6 +962,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraGrid.GridControl gridProduct;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.TextEdit txtInventorySearchBarCode;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private System.Windows.Forms.GroupBox groupBox1;
 
 
     }
