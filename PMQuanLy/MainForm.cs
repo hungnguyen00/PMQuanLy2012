@@ -139,29 +139,6 @@ namespace PMQuanLy
             lblSumWeight.Text = dtProduct.Compute("SUM(weight)", String.Empty).ToString();
         }
 
-        /*private void gridView4_DoubleClick(object sender, EventArgs e)
-        {
-            GridView view = (GridView)sender;
-            Point pt = view.GridControl.PointToClient(Control.MousePosition);
-            GridHitInfo info = view.CalcHitInfo(pt);
-            if (info.InRow || info.InRowCell)
-            {
-                DataRow[] row = new DataRow[view.SelectedRowsCount];
-                for (int i = 0; i < view.SelectedRowsCount; i++)
-                {
-                    rows[i] = view.GetDataRow(view.GetSelectedRows()[i]);
-                }
-                foreach (DataRow row in rows)
-                {
-                    dtInventory.ImportRow(row);
-                }
-                row[0] = view.GetDataRow(view.GetSelectedRows()[0]);
-                dtInventory.ImportRow(row[0]);
-                gv1.DataSource = dtInventory;
-                view.DeleteRow(view.FocusedRowHandle);
-            }
-        }*/
-
         private void txtQrCode_TextChanged(object sender, EventArgs e)
         {
             if (txtOrderQrCode.Text.Length == 27) 
@@ -287,15 +264,21 @@ namespace PMQuanLy
             MessageBox.Show("Order Successfully!!!");
         }
 
-        private void txtInventorySearchBarCode_TextChanged(object sender, EventArgs e)
+        private void btnInventoryInsertNew_Click(object sender, EventArgs e)
         {
-            String filter_string = "1 = 1 ";
-            String bar_code = txtInventorySearchBarCode.Text.ToString();
-            if (!bar_code.Equals(""))
+            Hashtable hInventory = new Hashtable();
+            hInventory.Add("qr_code", txtInventoryBarCodeInsert.Text.ToString());
+            hInventory.Add("weight", txtInventoryWeightInsert.Text.ToString());
+            hInventory.Add("status", 1);
+
+            if (mInventory.insertNewInventory(hInventory) > 0)
             {
-                filter_string += String.Format(" AND [qr_code] LIKE '%{0}%'", bar_code);
+                MessageBox.Show("Insert Successfully!!!");
             }
-            gridInventory.ActiveFilterString = filter_string;
+            else 
+            {
+                MessageBox.Show("Insert Failed!!!");
+            }
         }
     }
 }

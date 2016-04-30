@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SQLite;
 using System.Data;
+using System.Collections;
 
 namespace PMQuanLy.Model
 {
@@ -14,8 +15,8 @@ namespace PMQuanLy.Model
         SQLiteDataAdapter adapter;
         DataTable dt1;
 
-        String cnnString = System.IO.Directory.GetCurrentDirectory() + "/../../quanly_db.db";
-        //String cnnString = System.IO.Directory.GetCurrentDirectory() + "/quanly_db.db";
+        //String cnnString = System.IO.Directory.GetCurrentDirectory() + "/../../quanly_db.db";
+        String cnnString = System.IO.Directory.GetCurrentDirectory() + "/quanly_db.db";
 
         private void startConnect()
         {
@@ -38,6 +39,7 @@ namespace PMQuanLy.Model
                 conn.Close();
                 cmd = null;
                 adapter = null;
+                dt1 = null;
             }
         }
         protected DataTable selectQuery(String select, String from, String where, SQLiteParameter[] arrValues)
@@ -87,11 +89,44 @@ namespace PMQuanLy.Model
             cmd.CommandText = sqlCommand;
             adapter.SelectCommand = cmd;
             adapter.Fill(dt1);
+            stopConnect();
             if (dt1.Rows[0][0].ToString() == "1") 
             {
                 return true;
             }
             return false;
+        }
+
+        protected int insertQuery(String table, Hashtable arrCol)
+        {
+            startConnect();
+
+            //get columns, values list
+            String column = "", value = "";
+            List<SQLiteParameter> arrListValues = new List<SQLiteParameter>();
+            foreach (DictionaryEntry entry in arrCol)
+            {
+                column += entry.Key + ",";
+                value  += "@" + entry.Key + ",";
+                arrListValues.Add(new SQLiteParameter("@" + entry.Key, entry.Value));
+            }
+            //delete the last comma ',' character
+            column = column.Remove(column.Length - 1);
+            value = value.Remove(value.Length - 1);
+
+            //get full query
+            String sqlCommand = "INSERT INTO " + table + "(" + column + ") VALUES(" + value + ")";
+
+            //append value
+            foreach (SQLiteParameter val in arrListValues)
+            {
+                cmd.Parameters.Add(val);
+            }
+
+            cmd.CommandText = sqlCommand;
+            int result = cmd.ExecuteNonQuery();
+            stopConnect();
+            return result;
         }
     }
 }
