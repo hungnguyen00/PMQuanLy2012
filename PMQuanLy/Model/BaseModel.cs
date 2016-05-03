@@ -15,21 +15,22 @@ namespace PMQuanLy.Model
         SQLiteDataAdapter adapter;
         DataTable dt1;
 
-        //String cnnString = System.IO.Directory.GetCurrentDirectory() + "/../../quanly_db.db";
-        String cnnString = System.IO.Directory.GetCurrentDirectory() + "/quanly_db.db";
+        String cnnString = System.IO.Directory.GetCurrentDirectory() + "/../../quanly_db.db";
+        //String cnnString = System.IO.Directory.GetCurrentDirectory() + "/quanly_db.db";
 
         private void startConnect()
         {
             if (cmd == null) 
             {
                 conn = new SQLiteConnection();
+
                 cmd = new SQLiteCommand();
                 adapter = new SQLiteDataAdapter();
 
-                cmd.Connection = conn;
-                adapter.SelectCommand = cmd;
                 //conn.ConnectionString = @"data source=E:\visual_workspace\PMQuanLy2012\PMQuanLy\quanly_db.sqlite";
                 conn.ConnectionString = @"data source=" + cnnString;
+                cmd.Connection = conn;
+                adapter.SelectCommand = cmd;
             }
         }
         private void stopConnect()
@@ -39,7 +40,6 @@ namespace PMQuanLy.Model
                 conn.Close();
                 cmd = null;
                 adapter = null;
-                dt1 = null;
             }
         }
         protected DataTable selectQuery(String select, String from, String where, SQLiteParameter[] arrValues)
@@ -68,7 +68,34 @@ namespace PMQuanLy.Model
             return dt1;
         }
 
-        protected bool existQuery(String from, String where, SQLiteParameter[] arrValues)
+        protected DataTable selectQuery(String select, String from, String where, SQLiteParameter[] arrValues, String group_by)
+        {
+            startConnect();
+            dt1 = new DataTable();
+            String sqlCommand = "SELECT " + select + " FROM " + from;
+            if (where.Length > 0)
+            {
+                sqlCommand += " WHERE " + where;
+            }
+            sqlCommand += group_by;
+            cmd.CommandText = sqlCommand;
+
+            if (arrValues.Count() > 0)
+            {
+                foreach (SQLiteParameter value in arrValues)
+                {
+                    cmd.Parameters.Add(value);
+                }
+            }
+
+            cmd.CommandText = sqlCommand;
+            adapter.SelectCommand = cmd;
+            adapter.Fill(dt1);
+            stopConnect();
+            return dt1;
+        }
+
+        public bool existQuery(String from, String where, SQLiteParameter[] arrValues)
         {
             startConnect();
             dt1 = new DataTable();
@@ -97,7 +124,7 @@ namespace PMQuanLy.Model
             return false;
         }
 
-        protected int insertQuery(String table, Hashtable arrCol)
+        protected bool insertQuery(String table, Hashtable arrCol)
         {
             startConnect();
 
@@ -122,11 +149,12 @@ namespace PMQuanLy.Model
             {
                 cmd.Parameters.Add(val);
             }
-
-            cmd.CommandText = sqlCommand;
-            int result = cmd.ExecuteNonQuery();
-            stopConnect();
-            return result;
+            
+                cmd.CommandText = sqlCommand;
+                adapter.SelectCommand = cmd;
+                adapter.Fill(dt1);
+                stopConnect();
+                return true;
         }
     }
 }

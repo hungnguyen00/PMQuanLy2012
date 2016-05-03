@@ -26,5 +26,12 @@ namespace PMQuanLy.Model
             SQLiteParameter[] arrValues = { new SQLiteParameter("id", id)};
             return selectQuery(select, table, where, arrValues);
         }
+
+        public bool checkProductByProductCode(string productCode)
+        {
+            String where = "product_code=@product_code";
+            SQLiteParameter[] arrValues = { new SQLiteParameter("product_code", productCode) };
+            return existQuery( table, where, arrValues);
+        }
     }
 }

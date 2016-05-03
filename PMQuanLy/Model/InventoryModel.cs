@@ -16,21 +16,28 @@ namespace PMQuanLy.Model
         {
             String select = " p.name, p.product_code, i.qr_code, i.weight, i.created_date";
             String where = "";
-            table = "inventory i left join list_product p on i.product_code = p.product_code";
+            String table_temp = "inventory i left join list_product p on i.product_code = p.product_code";
             SQLiteParameter[] arrValues = {};
+            return selectQuery(select, table_temp, where, arrValues);
+        }
+
+        public DataTable getInventoryByQrCode(String qr_code)
+        {
+            String select = " qr_code, product_detail_id, weight, status";
+            String where = "qr_code=@code";
+            SQLiteParameter[] arrValues = { new SQLiteParameter("qr_code", qr_code) };
             return selectQuery(select, table, where, arrValues);
         }
 
-        public DataTable getInventoryByQrCode(int code)
+        public bool checkInventoryByQrCode(String qr_code)
         {
-            String select = " code, product_detail_id, weight, status";
-            String where = "code=@code";
-            SQLiteParameter[] arrValues = { new SQLiteParameter("code", code)};
-            return selectQuery(select, table, where, arrValues);
+            String where = "qr_code=@qr_code";
+            SQLiteParameter[] arrValues = { new SQLiteParameter("qr_code", qr_code) };
+            return existQuery(table, where, arrValues);
         }
-        public int insertNewInventory(Hashtable arrCol)
+        public bool insertNewInventory(Hashtable arrCol)
         {
-            int result = 0;
+            bool result = false;
             result = insertQuery(table, arrCol);
 
             return result;

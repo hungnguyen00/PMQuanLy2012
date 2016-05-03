@@ -130,6 +130,8 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\BaseModel.cs" />
+    <Compile Include="Model\OrderDetailModel.cs" />
+    <Compile Include="Model\OrderModel.cs" />
     <Compile Include="Model\MemberModel.cs" />
     <Compile Include="Model\InventoryModel.cs" />
     <Compile Include="Model\ListProductModel.cs" />
