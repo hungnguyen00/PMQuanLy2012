@@ -56,10 +56,11 @@
             this.navBarOrder = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarOrderList = new DevExpress.XtraNavBar.NavBarItem();
             this.panelProductDetail = new DevExpress.XtraEditors.PanelControl();
+            this.btnInventorySubmit = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtInventoryBarCodeInsert = new DevExpress.XtraEditors.TextEdit();
             this.lblInventoryWeightInsertError = new DevExpress.XtraEditors.LabelControl();
             this.lblInventoryBarCodeInsertError = new DevExpress.XtraEditors.LabelControl();
-            this.txtInventoryBarCodeInsert = new System.Windows.Forms.MaskedTextBox();
             this.btnInventoryInsertNew = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtInventoryWeightInsert = new DevExpress.XtraEditors.TextEdit();
@@ -160,6 +161,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelProductDetail)).BeginInit();
             this.panelProductDetail.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInventoryBarCodeInsert.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInventoryWeightInsert.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelProductDetailGrid)).BeginInit();
             this.panelProductDetailGrid.SuspendLayout();
@@ -310,6 +312,7 @@
             // 
             // panelProductDetail
             // 
+            this.panelProductDetail.Controls.Add(this.btnInventorySubmit);
             this.panelProductDetail.Controls.Add(this.groupBox1);
             this.panelProductDetail.Controls.Add(this.labelControl3);
             this.panelProductDetail.Controls.Add(this.panelProductDetailGrid);
@@ -319,11 +322,20 @@
             this.panelProductDetail.Size = new System.Drawing.Size(974, 557);
             this.panelProductDetail.TabIndex = 7;
             // 
+            // btnInventorySubmit
+            // 
+            this.btnInventorySubmit.Location = new System.Drawing.Point(69, 529);
+            this.btnInventorySubmit.Name = "btnInventorySubmit";
+            this.btnInventorySubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnInventorySubmit.TabIndex = 6;
+            this.btnInventorySubmit.Text = "Submit";
+            this.btnInventorySubmit.Click += new System.EventHandler(this.btnInventorySubmit_Click);
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtInventoryBarCodeInsert);
             this.groupBox1.Controls.Add(this.lblInventoryWeightInsertError);
             this.groupBox1.Controls.Add(this.lblInventoryBarCodeInsertError);
-            this.groupBox1.Controls.Add(this.txtInventoryBarCodeInsert);
             this.groupBox1.Controls.Add(this.btnInventoryInsertNew);
             this.groupBox1.Controls.Add(this.labelControl13);
             this.groupBox1.Controls.Add(this.txtInventoryWeightInsert);
@@ -334,6 +346,13 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Insert New Inventory";
+            // 
+            // txtInventoryBarCodeInsert
+            // 
+            this.txtInventoryBarCodeInsert.Location = new System.Drawing.Point(67, 35);
+            this.txtInventoryBarCodeInsert.Name = "txtInventoryBarCodeInsert";
+            this.txtInventoryBarCodeInsert.Size = new System.Drawing.Size(314, 20);
+            this.txtInventoryBarCodeInsert.TabIndex = 8;
             // 
             // lblInventoryWeightInsertError
             // 
@@ -350,14 +369,6 @@
             this.lblInventoryBarCodeInsertError.Name = "lblInventoryBarCodeInsertError";
             this.lblInventoryBarCodeInsertError.Size = new System.Drawing.Size(0, 13);
             this.lblInventoryBarCodeInsertError.TabIndex = 6;
-            // 
-            // txtInventoryBarCodeInsert
-            // 
-            this.txtInventoryBarCodeInsert.Location = new System.Drawing.Point(67, 33);
-            this.txtInventoryBarCodeInsert.Mask = "0000P00000000.PN0000000.000";
-            this.txtInventoryBarCodeInsert.Name = "txtInventoryBarCodeInsert";
-            this.txtInventoryBarCodeInsert.Size = new System.Drawing.Size(314, 21);
-            this.txtInventoryBarCodeInsert.TabIndex = 5;
             // 
             // btnInventoryInsertNew
             // 
@@ -410,7 +421,7 @@
             this.panelProductDetailGrid.Controls.Add(this.gridProductDetail);
             this.panelProductDetailGrid.Location = new System.Drawing.Point(2, 194);
             this.panelProductDetailGrid.Name = "panelProductDetailGrid";
-            this.panelProductDetailGrid.Size = new System.Drawing.Size(970, 361);
+            this.panelProductDetailGrid.Size = new System.Drawing.Size(970, 325);
             this.panelProductDetailGrid.TabIndex = 1;
             // 
             // labelControl4
@@ -426,7 +437,7 @@
             this.gridProductDetail.Location = new System.Drawing.Point(2, 2);
             this.gridProductDetail.MainView = this.gridInventory;
             this.gridProductDetail.Name = "gridProductDetail";
-            this.gridProductDetail.Size = new System.Drawing.Size(966, 357);
+            this.gridProductDetail.Size = new System.Drawing.Size(966, 321);
             this.gridProductDetail.TabIndex = 0;
             this.gridProductDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridInventory});
@@ -1342,6 +1353,7 @@
             this.panelProductDetail.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtInventoryBarCodeInsert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInventoryWeightInsert.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelProductDetailGrid)).EndInit();
             this.panelProductDetailGrid.ResumeLayout(false);
@@ -1492,7 +1504,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private DevExpress.XtraEditors.SimpleButton btnInventoryInsertNew;
         private DevExpress.XtraEditors.LabelControl labelControl13;
-        private System.Windows.Forms.MaskedTextBox txtInventoryBarCodeInsert;
         private DevExpress.XtraNavBar.NavBarItem navBarOrderList;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
         private DevExpress.XtraEditors.PanelControl panelControl7;
@@ -1535,6 +1546,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraEditors.TextEdit txtInventoryBarCodeInsert;
+        private DevExpress.XtraEditors.SimpleButton btnInventorySubmit;
 
 
     }

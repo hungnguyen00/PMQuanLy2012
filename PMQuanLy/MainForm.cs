@@ -36,8 +36,8 @@ namespace PMQuanLy
             mInventory = new InventoryModel();
             mOrder = new OrderModel();
             mOrderDetail = new OrderDetailModel();
-            xtraTabControl1.SelectedTabPageIndex = 1;
-            LoadDataInventory();
+            xtraTabControl1.SelectedTabPageIndex = 0;
+            LoadDataProduct();
         }
         private void LoadDataProduct()
         {
@@ -47,8 +47,6 @@ namespace PMQuanLy
         }
         private void LoadDataInventory()
         {
-            dtInventory = new DataTable();
-            dtInventory = mInventory.getAllInventory();
             gridProductDetail.DataSource = dtInventory;
 
             //reset textbox
@@ -58,6 +56,7 @@ namespace PMQuanLy
             //reset validate error
             lblInventoryBarCodeInsertError.Text = "";
             lblInventoryWeightInsertError.Text = "";
+            txtInventoryBarCodeInsert.Select();
         }
         private void LoadDataOrder()
         {
@@ -101,6 +100,14 @@ namespace PMQuanLy
             gvOrderListOrder.DataSource = dtOrder;
         }
 
+        private void resetInventoryGridControl()
+        {
+            dtInventory = new DataTable();
+            dtInventory.Columns.Add("product_name");
+            dtInventory.Columns.Add("product_code");
+            dtInventory.Columns.Add("qr_code");
+            dtInventory.Columns.Add("weight");
+        }
         private void navBarProduct_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             xtraTabControl1.SelectedTabPageIndex = 0;
@@ -110,8 +117,8 @@ namespace PMQuanLy
         private void navBarProductDetail_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             xtraTabControl1.SelectedTabPageIndex = 1;
+            resetInventoryGridControl();
             LoadDataInventory();
-            txtInventoryBarCodeInsert.Select();
         }
         private void navBarOrder_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -390,7 +397,7 @@ namespace PMQuanLy
             }
             else if (mInventory.checkInventoryByQrCode(txtInventoryBarCodeInsert.Text.ToString()))
             {
-                lblInventoryBarCodeInsertError.Text = "Iventory existed.";
+                lblInventoryBarCodeInsertError.Text = "Inventory existed.";
                 result = true;
             }
 
@@ -398,7 +405,7 @@ namespace PMQuanLy
         }
         private void InsertNewInventory()
         {
-            Hashtable hInventory = new Hashtable();
+            /*Hashtable hInventory = new Hashtable();
             hInventory.Add("qr_code", txtInventoryBarCodeInsert.Text.ToString());
             hInventory.Add("weight", txtInventoryWeightInsert.Text.ToString());
             hInventory.Add("status", 1);
@@ -409,7 +416,21 @@ namespace PMQuanLy
             else
             {
                 MessageBox.Show("Insert Failed!!!");
-            }
+            }*/
+
+            //validate qr_code
+            string[] seperator = { "." };
+            string[] arrQrCode = txtInventoryBarCodeInsert.Text.ToString().Split(seperator, StringSplitOptions.None);
+            DataTable dtTemp = mProduct.getProductByProductCode(arrQrCode[0]);
+
+
+            DataRow drTemp = dtInventory.NewRow();
+            drTemp["product_name"] = dtTemp.Rows[0]["name"];
+            drTemp["product_code"] = dtTemp.Rows[0]["product_code"];
+            drTemp["qr_code"] = txtInventoryBarCodeInsert.Text.ToString();
+            drTemp["weight"] = txtInventoryWeightInsert.Text.ToString();
+            dtInventory.Rows.Add(drTemp);
+
             LoadDataInventory();
         }
 
@@ -445,6 +466,13 @@ namespace PMQuanLy
                 dtProduct = mOrderDetail.getOrderProductDetailByOrderId(order_id);
                 gvOrderListOrderProduct.DataSource = dtProduct;
             }
+        }
+
+        private void btnInventorySubmit_Click(object sender, EventArgs e)
+        {
+            resetInventoryGridControl();
+            LoadDataInventory();
+            MessageBox.Show("Successfully!!!");
         }
     }
 }
