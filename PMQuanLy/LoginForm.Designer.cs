@@ -51,6 +51,7 @@
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(144, 20);
             this.txt_username.TabIndex = 1;
+            this.txt_username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_username_KeyDown);
             // 
             // txt_password
             // 
@@ -59,6 +60,7 @@
             this.txt_password.Properties.UseSystemPasswordChar = true;
             this.txt_password.Size = new System.Drawing.Size(144, 20);
             this.txt_password.TabIndex = 3;
+            this.txt_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_password_KeyDown);
             // 
             // labelControl2
             // 

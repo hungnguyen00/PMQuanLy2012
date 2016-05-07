@@ -39,9 +39,7 @@ namespace PMQuanLy.Model
         {
             bool result = false;
             result = insertQuery(table, arrCol);
-
             return result;
-
         }
     }
 }

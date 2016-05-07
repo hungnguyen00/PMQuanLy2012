@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.TableQuery tableQuery1 = new DevExpress.DataAccess.Sql.TableQuery();
-            DevExpress.DataAccess.Sql.RelationInfo relationInfo1 = new DevExpress.DataAccess.Sql.RelationInfo();
-            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
-            DevExpress.DataAccess.Sql.TableInfo tableInfo1 = new DevExpress.DataAccess.Sql.TableInfo();
-            DevExpress.DataAccess.Sql.ColumnInfo columnInfo1 = new DevExpress.DataAccess.Sql.ColumnInfo();
-            DevExpress.DataAccess.Sql.ColumnInfo columnInfo2 = new DevExpress.DataAccess.Sql.ColumnInfo();
-            DevExpress.DataAccess.Sql.ColumnInfo columnInfo3 = new DevExpress.DataAccess.Sql.ColumnInfo();
-            DevExpress.DataAccess.Sql.ColumnInfo columnInfo4 = new DevExpress.DataAccess.Sql.ColumnInfo();
-            DevExpress.DataAccess.Sql.ColumnInfo columnInfo5 = new DevExpress.DataAccess.Sql.ColumnInfo();
-            DevExpress.DataAccess.Sql.TableInfo tableInfo2 = new DevExpress.DataAccess.Sql.TableInfo();
-            DevExpress.DataAccess.Sql.ColumnInfo columnInfo6 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.TableQuery tableQuery2 = new DevExpress.DataAccess.Sql.TableQuery();
+            DevExpress.DataAccess.Sql.RelationInfo relationInfo2 = new DevExpress.DataAccess.Sql.RelationInfo();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo2 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
+            DevExpress.DataAccess.Sql.TableInfo tableInfo3 = new DevExpress.DataAccess.Sql.TableInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo7 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo8 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo9 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo10 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo11 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.TableInfo tableInfo4 = new DevExpress.DataAccess.Sql.TableInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo12 = new DevExpress.DataAccess.Sql.ColumnInfo();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar1 = new DevExpress.XtraBars.Bar();
@@ -68,16 +68,17 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.panelProductDetailGrid = new DevExpress.XtraEditors.PanelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.gridProductDetail = new DevExpress.XtraGrid.GridControl();
+            this.gvInventory = new DevExpress.XtraGrid.GridControl();
             this.gridInventory = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.btnProductSync = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.gridProduct = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gvProduct = new DevExpress.XtraGrid.GridControl();
+            this.gridProduct = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.panelOrder = new DevExpress.XtraEditors.PanelControl();
@@ -90,7 +91,7 @@
             this.lblOrderSumWeight = new DevExpress.XtraEditors.LabelControl();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.btnOrderSubmit = new DevExpress.XtraEditors.SimpleButton();
-            this.gv3 = new DevExpress.XtraGrid.GridControl();
+            this.gvOrderOrderProduct = new DevExpress.XtraGrid.GridControl();
             this.sqlDSInventory = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gridOrderOrderProduct = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.product_name = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -99,7 +100,7 @@
             this.product_weight = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnOrderProductDelete = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.gv2 = new DevExpress.XtraGrid.GridControl();
+            this.gvOrderOrderInventory = new DevExpress.XtraGrid.GridControl();
             this.gridOrderOrderInventory = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colproduct_code2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colqr_code2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -115,7 +116,7 @@
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.txtOrderQrCode = new DevExpress.XtraEditors.TextEdit();
-            this.gv1 = new DevExpress.XtraGrid.GridControl();
+            this.gvOrderOrder = new DevExpress.XtraGrid.GridControl();
             this.gridOrderInventory = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.product_code = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -165,7 +166,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtInventoryWeightInsert.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelProductDetailGrid)).BeginInit();
             this.panelProductDetailGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridProductDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -174,8 +175,8 @@
             this.panelControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             this.xtraTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelOrder)).BeginInit();
@@ -186,10 +187,10 @@
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gv3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrderOrderProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrderOrderProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOrderProductDelete)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrderOrderInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrderOrderInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOrderInventoryDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -199,7 +200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderSearchProductCode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderSearchProductName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderQrCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrderOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrderInventory)).BeginInit();
             this.xtraTabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
@@ -418,7 +419,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelProductDetailGrid.Controls.Add(this.labelControl4);
-            this.panelProductDetailGrid.Controls.Add(this.gridProductDetail);
+            this.panelProductDetailGrid.Controls.Add(this.gvInventory);
             this.panelProductDetailGrid.Location = new System.Drawing.Point(2, 194);
             this.panelProductDetailGrid.Name = "panelProductDetailGrid";
             this.panelProductDetailGrid.Size = new System.Drawing.Size(970, 325);
@@ -431,20 +432,20 @@
             this.labelControl4.Size = new System.Drawing.Size(0, 13);
             this.labelControl4.TabIndex = 0;
             // 
-            // gridProductDetail
+            // gvInventory
             // 
-            this.gridProductDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridProductDetail.Location = new System.Drawing.Point(2, 2);
-            this.gridProductDetail.MainView = this.gridInventory;
-            this.gridProductDetail.Name = "gridProductDetail";
-            this.gridProductDetail.Size = new System.Drawing.Size(966, 321);
-            this.gridProductDetail.TabIndex = 0;
-            this.gridProductDetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvInventory.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvInventory.Location = new System.Drawing.Point(2, 2);
+            this.gvInventory.MainView = this.gridInventory;
+            this.gvInventory.Name = "gvInventory";
+            this.gvInventory.Size = new System.Drawing.Size(966, 321);
+            this.gvInventory.TabIndex = 0;
+            this.gvInventory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridInventory});
             // 
             // gridInventory
             // 
-            this.gridInventory.GridControl = this.gridProductDetail;
+            this.gridInventory.GridControl = this.gvInventory;
             this.gridInventory.Name = "gridInventory";
             this.gridInventory.OptionsBehavior.Editable = false;
             this.gridInventory.OptionsFilter.AllowFilterEditor = false;
@@ -476,6 +477,7 @@
             // 
             // panelControl5
             // 
+            this.panelControl5.Controls.Add(this.btnProductSync);
             this.panelControl5.Controls.Add(this.labelControl1);
             this.panelControl5.Controls.Add(this.panelControl6);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -483,6 +485,15 @@
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(974, 557);
             this.panelControl5.TabIndex = 8;
+            // 
+            // btnProductSync
+            // 
+            this.btnProductSync.Location = new System.Drawing.Point(755, 20);
+            this.btnProductSync.Name = "btnProductSync";
+            this.btnProductSync.Size = new System.Drawing.Size(75, 23);
+            this.btnProductSync.TabIndex = 4;
+            this.btnProductSync.Text = "Sync";
+            this.btnProductSync.Click += new System.EventHandler(this.btnProductSync_Click);
             // 
             // labelControl1
             // 
@@ -499,7 +510,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl6.Controls.Add(this.labelControl2);
-            this.panelControl6.Controls.Add(this.gridProduct);
+            this.panelControl6.Controls.Add(this.gvProduct);
             this.panelControl6.Location = new System.Drawing.Point(2, 62);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(970, 493);
@@ -512,23 +523,23 @@
             this.labelControl2.Size = new System.Drawing.Size(0, 13);
             this.labelControl2.TabIndex = 0;
             // 
+            // gvProduct
+            // 
+            this.gvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvProduct.Location = new System.Drawing.Point(2, 2);
+            this.gvProduct.MainView = this.gridProduct;
+            this.gvProduct.Name = "gvProduct";
+            this.gvProduct.Size = new System.Drawing.Size(966, 489);
+            this.gvProduct.TabIndex = 0;
+            this.gvProduct.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridProduct});
+            // 
             // gridProduct
             // 
-            this.gridProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridProduct.Location = new System.Drawing.Point(2, 2);
-            this.gridProduct.MainView = this.gridView1;
+            this.gridProduct.GridControl = this.gvProduct;
             this.gridProduct.Name = "gridProduct";
-            this.gridProduct.Size = new System.Drawing.Size(966, 489);
-            this.gridProduct.TabIndex = 0;
-            this.gridProduct.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridProduct;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridProduct.OptionsBehavior.Editable = false;
+            this.gridProduct.OptionsView.ShowAutoFilterRow = true;
             // 
             // xtraTabPage2
             // 
@@ -600,8 +611,8 @@
             this.panelControl1.Controls.Add(this.lblOrderSumWeight);
             this.panelControl1.Controls.Add(this.labelControl25);
             this.panelControl1.Controls.Add(this.btnOrderSubmit);
-            this.panelControl1.Controls.Add(this.gv3);
-            this.panelControl1.Controls.Add(this.gv2);
+            this.panelControl1.Controls.Add(this.gvOrderOrderProduct);
+            this.panelControl1.Controls.Add(this.gvOrderOrderInventory);
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(468, 456);
@@ -646,56 +657,56 @@
             this.btnOrderSubmit.Text = "submit";
             this.btnOrderSubmit.Click += new System.EventHandler(this.btnOrderSubmit_Click);
             // 
-            // gv3
+            // gvOrderOrderProduct
             // 
-            this.gv3.DataMember = "inventory";
-            this.gv3.DataSource = this.sqlDSInventory;
-            this.gv3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gv3.Location = new System.Drawing.Point(2, 2);
-            this.gv3.MainView = this.gridOrderOrderProduct;
-            this.gv3.Name = "gv3";
-            this.gv3.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gvOrderOrderProduct.DataMember = "inventory";
+            this.gvOrderOrderProduct.DataSource = this.sqlDSInventory;
+            this.gvOrderOrderProduct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gvOrderOrderProduct.Location = new System.Drawing.Point(2, 2);
+            this.gvOrderOrderProduct.MainView = this.gridOrderOrderProduct;
+            this.gvOrderOrderProduct.Name = "gvOrderOrderProduct";
+            this.gvOrderOrderProduct.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnOrderProductDelete});
-            this.gv3.Size = new System.Drawing.Size(464, 242);
-            this.gv3.TabIndex = 1;
-            this.gv3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvOrderOrderProduct.Size = new System.Drawing.Size(464, 242);
+            this.gvOrderOrderProduct.TabIndex = 1;
+            this.gvOrderOrderProduct.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridOrderOrderProduct});
             // 
             // sqlDSInventory
             // 
             this.sqlDSInventory.ConnectionName = "sqlite_quanly_db";
             this.sqlDSInventory.Name = "sqlDSInventory";
-            tableQuery1.FilterString = "[inventory.status] = 1L";
-            tableQuery1.Name = "inventory";
-            relationColumnInfo1.NestedKeyColumn = "product_code";
-            relationColumnInfo1.ParentKeyColumn = "product_code";
-            relationInfo1.KeyColumns.AddRange(new DevExpress.DataAccess.Sql.RelationColumnInfo[] {
-            relationColumnInfo1});
-            relationInfo1.NestedTable = "list_product";
-            relationInfo1.ParentTable = "inventory";
-            tableQuery1.Relations.AddRange(new DevExpress.DataAccess.Sql.RelationInfo[] {
-            relationInfo1});
-            tableInfo1.Name = "inventory";
-            columnInfo1.Name = "qr_code";
-            columnInfo2.Name = "weight";
-            columnInfo3.Name = "status";
-            columnInfo4.Name = "product_code";
-            columnInfo5.Name = "created_date";
-            tableInfo1.SelectedColumns.AddRange(new DevExpress.DataAccess.Sql.ColumnInfo[] {
-            columnInfo1,
-            columnInfo2,
-            columnInfo3,
-            columnInfo4,
-            columnInfo5});
-            tableInfo2.Name = "list_product";
-            columnInfo6.Name = "name";
-            tableInfo2.SelectedColumns.AddRange(new DevExpress.DataAccess.Sql.ColumnInfo[] {
-            columnInfo6});
-            tableQuery1.Tables.AddRange(new DevExpress.DataAccess.Sql.TableInfo[] {
-            tableInfo1,
-            tableInfo2});
+            tableQuery2.FilterString = "[inventory.status] = 1L";
+            tableQuery2.Name = "inventory";
+            relationColumnInfo2.NestedKeyColumn = "product_code";
+            relationColumnInfo2.ParentKeyColumn = "product_code";
+            relationInfo2.KeyColumns.AddRange(new DevExpress.DataAccess.Sql.RelationColumnInfo[] {
+            relationColumnInfo2});
+            relationInfo2.NestedTable = "list_product";
+            relationInfo2.ParentTable = "inventory";
+            tableQuery2.Relations.AddRange(new DevExpress.DataAccess.Sql.RelationInfo[] {
+            relationInfo2});
+            tableInfo3.Name = "inventory";
+            columnInfo7.Name = "qr_code";
+            columnInfo8.Name = "weight";
+            columnInfo9.Name = "status";
+            columnInfo10.Name = "product_code";
+            columnInfo11.Name = "created_date";
+            tableInfo3.SelectedColumns.AddRange(new DevExpress.DataAccess.Sql.ColumnInfo[] {
+            columnInfo7,
+            columnInfo8,
+            columnInfo9,
+            columnInfo10,
+            columnInfo11});
+            tableInfo4.Name = "list_product";
+            columnInfo12.Name = "name";
+            tableInfo4.SelectedColumns.AddRange(new DevExpress.DataAccess.Sql.ColumnInfo[] {
+            columnInfo12});
+            tableQuery2.Tables.AddRange(new DevExpress.DataAccess.Sql.TableInfo[] {
+            tableInfo3,
+            tableInfo4});
             this.sqlDSInventory.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            tableQuery1});
+            tableQuery2});
             this.sqlDSInventory.ResultSchemaSerializable = resources.GetString("sqlDSInventory.ResultSchemaSerializable");
             // 
             // gridOrderOrderProduct
@@ -706,7 +717,7 @@
             this.product_product_code,
             this.product_weight,
             this.gridColumn1});
-            this.gridOrderOrderProduct.GridControl = this.gv3;
+            this.gridOrderOrderProduct.GridControl = this.gvOrderOrderProduct;
             this.gridOrderOrderProduct.Name = "gridOrderOrderProduct";
             this.gridOrderOrderProduct.OptionsView.ShowGroupPanel = false;
             // 
@@ -755,26 +766,26 @@
             // 
             this.btnOrderProductDelete.AutoHeight = false;
             this.btnOrderProductDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnOrderProductDelete.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnOrderProductDelete.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true)});
             this.btnOrderProductDelete.Name = "btnOrderProductDelete";
             this.btnOrderProductDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnOrderProductDelete.Click += new System.EventHandler(this.btnOrderProductDelete_Click);
             // 
-            // gv2
+            // gvOrderOrderInventory
             // 
-            this.gv2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gvOrderOrderInventory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gv2.DataMember = "inventory";
-            this.gv2.DataSource = this.sqlDSInventory;
-            this.gv2.Location = new System.Drawing.Point(2, 277);
-            this.gv2.MainView = this.gridOrderOrderInventory;
-            this.gv2.Name = "gv2";
-            this.gv2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gvOrderOrderInventory.DataMember = "inventory";
+            this.gvOrderOrderInventory.DataSource = this.sqlDSInventory;
+            this.gvOrderOrderInventory.Location = new System.Drawing.Point(2, 277);
+            this.gvOrderOrderInventory.MainView = this.gridOrderOrderInventory;
+            this.gvOrderOrderInventory.Name = "gvOrderOrderInventory";
+            this.gvOrderOrderInventory.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.btnOrderInventoryDelete});
-            this.gv2.Size = new System.Drawing.Size(464, 177);
-            this.gv2.TabIndex = 3;
-            this.gv2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvOrderOrderInventory.Size = new System.Drawing.Size(464, 177);
+            this.gvOrderOrderInventory.TabIndex = 3;
+            this.gvOrderOrderInventory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridOrderOrderInventory});
             // 
             // gridOrderOrderInventory
@@ -785,7 +796,7 @@
             this.colqr_code2,
             this.colweight2,
             this.gridColumn2});
-            this.gridOrderOrderInventory.GridControl = this.gv2;
+            this.gridOrderOrderInventory.GridControl = this.gvOrderOrderInventory;
             this.gridOrderOrderInventory.Name = "gridOrderOrderInventory";
             this.gridOrderOrderInventory.OptionsView.ShowGroupPanel = false;
             // 
@@ -829,7 +840,7 @@
             // 
             this.btnOrderInventoryDelete.AutoHeight = false;
             this.btnOrderInventoryDelete.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnOrderInventoryDelete.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("btnOrderInventoryDelete.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true)});
             this.btnOrderInventoryDelete.Name = "btnOrderInventoryDelete";
             this.btnOrderInventoryDelete.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.btnOrderInventoryDelete.Click += new System.EventHandler(this.btnOrderInventoryDelete_Click);
@@ -837,7 +848,7 @@
             // panelControl3
             // 
             this.panelControl3.Controls.Add(this.panelControl4);
-            this.panelControl3.Controls.Add(this.gv1);
+            this.panelControl3.Controls.Add(this.gvOrderOrder);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
@@ -919,19 +930,19 @@
             this.txtOrderQrCode.TabIndex = 4;
             this.txtOrderQrCode.TextChanged += new System.EventHandler(this.txtQrCode_TextChanged);
             // 
-            // gv1
+            // gvOrderOrder
             // 
-            this.gv1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gvOrderOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gv1.DataMember = "inventory";
-            this.gv1.DataSource = this.sqlDSInventory;
-            this.gv1.Location = new System.Drawing.Point(2, 176);
-            this.gv1.MainView = this.gridOrderInventory;
-            this.gv1.Name = "gv1";
-            this.gv1.Size = new System.Drawing.Size(492, 288);
-            this.gv1.TabIndex = 2;
-            this.gv1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvOrderOrder.DataMember = "inventory";
+            this.gvOrderOrder.DataSource = this.sqlDSInventory;
+            this.gvOrderOrder.Location = new System.Drawing.Point(2, 176);
+            this.gvOrderOrder.MainView = this.gridOrderInventory;
+            this.gvOrderOrder.Name = "gvOrderOrder";
+            this.gvOrderOrder.Size = new System.Drawing.Size(492, 288);
+            this.gvOrderOrder.TabIndex = 2;
+            this.gvOrderOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridOrderInventory});
             // 
             // gridOrderInventory
@@ -942,7 +953,7 @@
             this.qr_code,
             this.weight,
             this.created_date});
-            this.gridOrderInventory.GridControl = this.gv1;
+            this.gridOrderInventory.GridControl = this.gvOrderOrder;
             this.gridOrderInventory.Name = "gridOrderInventory";
             this.gridOrderInventory.OptionsBehavior.Editable = false;
             this.gridOrderInventory.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
@@ -1119,7 +1130,7 @@
             // 
             this.repositoryItemButtonEdit1.AutoHeight = false;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repositoryItemButtonEdit1.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repositoryItemButtonEdit1.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject7, "", null, null, true)});
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             this.repositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1180,7 +1191,7 @@
             // 
             this.repositoryItemButtonEdit2.AutoHeight = false;
             this.repositoryItemButtonEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repositoryItemButtonEdit2.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("repositoryItemButtonEdit2.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject8, "", null, null, true)});
             this.repositoryItemButtonEdit2.Name = "repositoryItemButtonEdit2";
             this.repositoryItemButtonEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             // 
@@ -1342,8 +1353,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 563);
-            this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.xtraTabControl1);
+            this.Controls.Add(this.navBarControl1);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1358,7 +1369,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelProductDetailGrid)).EndInit();
             this.panelProductDetailGrid.ResumeLayout(false);
             this.panelProductDetailGrid.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridProductDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
@@ -1369,8 +1380,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.panelControl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage3.ResumeLayout(false);
             this.xtraTabPage3.PerformLayout();
@@ -1385,10 +1396,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gv3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrderOrderProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrderOrderProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOrderProductDelete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrderOrderInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrderOrderInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOrderInventoryDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
@@ -1399,7 +1410,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderSearchProductCode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderSearchProductName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderQrCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvOrderOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridOrderInventory)).EndInit();
             this.xtraTabPage4.ResumeLayout(false);
             this.xtraTabPage4.PerformLayout();
@@ -1448,7 +1459,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.PanelControl panelProductDetailGrid;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraGrid.GridControl gridProductDetail;
+        private DevExpress.XtraGrid.GridControl gvInventory;
         private DevExpress.XtraGrid.Views.Grid.GridView gridInventory;
         private DevExpress.XtraNavBar.NavBarItem navBarOrder;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
@@ -1459,11 +1470,11 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraGrid.GridControl gv3;
+        private DevExpress.XtraGrid.GridControl gvOrderOrderProduct;
         private DevExpress.XtraGrid.Views.Grid.GridView gridOrderOrderProduct;
-        private DevExpress.XtraGrid.GridControl gv1;
+        private DevExpress.XtraGrid.GridControl gvOrderOrder;
         private DevExpress.XtraGrid.Views.Grid.GridView gridOrderInventory;
-        private DevExpress.XtraGrid.GridControl gv2;
+        private DevExpress.XtraGrid.GridControl gvOrderOrderInventory;
         private DevExpress.XtraGrid.Views.Grid.GridView gridOrderOrderInventory;
         private DevExpress.XtraEditors.TextEdit txtOrderQrCode;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
@@ -1497,8 +1508,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraGrid.GridControl gridProduct;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gvProduct;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridProduct;
         private DevExpress.XtraEditors.TextEdit txtInventoryWeightInsert;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -1548,6 +1559,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraEditors.TextEdit txtInventoryBarCodeInsert;
         private DevExpress.XtraEditors.SimpleButton btnInventorySubmit;
+        private DevExpress.XtraEditors.SimpleButton btnProductSync;
 
 
     }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SQLite;
 using System.Data;
+using System.Collections;
 
 namespace PMQuanLy.Model
 {
@@ -39,6 +40,19 @@ namespace PMQuanLy.Model
             String where = "product_code=@product_code";
             SQLiteParameter[] arrValues = { new SQLiteParameter("product_code", productCode) };
             return selectQuery(select, table, where, arrValues);
+        }
+        public bool insertNewProduct(Hashtable arrCol)
+        {
+            bool result = false;
+            if (checkProductByProductCode(arrCol["product_code"].ToString())) // already on DB
+            {
+                result = true;
+            }
+            else
+            {
+                result = insertQuery(table, arrCol);
+            }
+            return result;
         }
     }
 }

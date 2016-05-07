@@ -13,6 +13,8 @@ using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using System.Collections;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors.Repository;
+using PMQuanLy.ServiceAppCust;
+using System.Xml.Linq;
 
 namespace PMQuanLy
 {
@@ -22,6 +24,7 @@ namespace PMQuanLy
         InventoryModel mInventory;
         OrderModel mOrder;
         OrderDetailModel mOrderDetail;
+        ServiceAppCust.ServiceCustomerControllerPortTypeClient serviceAppCust;
 
         private DataTable dtProduct, dtInventory, dtOrder;
 
@@ -36,6 +39,7 @@ namespace PMQuanLy
             mInventory = new InventoryModel();
             mOrder = new OrderModel();
             mOrderDetail = new OrderDetailModel();
+            serviceAppCust = new ServiceCustomerControllerPortTypeClient();
             xtraTabControl1.SelectedTabPageIndex = 0;
             LoadDataProduct();
         }
@@ -43,11 +47,11 @@ namespace PMQuanLy
         {
             dtProduct = new DataTable();
             dtProduct = mProduct.getAllProduct();
-            gridProduct.DataSource = dtProduct;
+            gvProduct.DataSource = dtProduct;
         }
         private void LoadDataInventory()
         {
-            gridProductDetail.DataSource = dtInventory;
+            gvInventory.DataSource = dtInventory;
 
             //reset textbox
             txtInventoryBarCodeInsert.Text = "";
@@ -69,7 +73,7 @@ namespace PMQuanLy
             dtInventory = new DataTable();
             dtInventory = mInventory.getAllInventory();
             dtInventory.Columns.Add("quantity", typeof(int));
-            gv1.DataSource = dtInventory;
+            gvOrderOrder.DataSource = dtInventory;
 
             //order
             dtOrder = new DataTable();
@@ -78,7 +82,7 @@ namespace PMQuanLy
             dtOrder.Columns.Add("qr_code");
             dtOrder.Columns.Add("weight");
             dtOrder.Columns.Add("created_date");
-            gv2.DataSource = dtOrder;
+            gvOrderOrderInventory.DataSource = dtOrder;
 
             //product
             dtProduct = new DataTable();
@@ -86,7 +90,7 @@ namespace PMQuanLy
             dtProduct.Columns.Add("quantity", typeof(int));
             dtProduct.Columns.Add("product_code");
             dtProduct.Columns.Add("weight",typeof(float));
-            gv3.DataSource = dtProduct;
+            gvOrderOrderProduct.DataSource = dtProduct;
 
             //set point focus
             txtOrderQrCode.Select();
@@ -148,7 +152,7 @@ namespace PMQuanLy
 
             //add new row to order inventory grid control
             dtOrder.ImportRow(arrRowInventory[0]);
-            gv2.RefreshDataSource();
+            gvOrderOrderInventory.RefreshDataSource();
 
             //get value to product gridcontrol
             string[] arrCode = qr_code.Split('.');
@@ -171,11 +175,11 @@ namespace PMQuanLy
                 dtProduct.ImportRow(arrRowInventory[0]);
             }
             //update row on product grid control
-            gv3.RefreshDataSource();
+            gvOrderOrderProduct.RefreshDataSource();
 
             //delete row on inventory grid control
             dtInventory.Rows.Remove(arrRowInventory[0]);
-            gv1.RefreshDataSource();
+            gvOrderOrder.RefreshDataSource();
 
             //get sum_weight + sum_quantity
             calculateSumWeight(1);
@@ -282,7 +286,7 @@ namespace PMQuanLy
 
                 //update inventory gridcontrol
                 dtInventory.ImportRow(row[0]);
-                gv1.RefreshDataSource();
+                gvOrderOrder.RefreshDataSource();
 
                 //update product gridcontrol
                 string product_code = row[0]["product_Code"].ToString();
@@ -305,11 +309,11 @@ namespace PMQuanLy
                     }
                 }
 
-                gv3.RefreshDataSource();
+                gvOrderOrderProduct.RefreshDataSource();
 
                 //delete order inventory gridcontrol
                 dtOrder.Rows.Remove(row[0]);
-                gv2.RefreshDataSource();
+                gvOrderOrderInventory.RefreshDataSource();
 
                 //get sum_weight + sum_quantity
                 calculateSumWeight(1);
@@ -345,12 +349,12 @@ namespace PMQuanLy
                     dtInventory.ImportRow(dr);
                     dtOrder.Rows.Remove(dr);
                 }
-                gv1.RefreshDataSource();
-                gv2.RefreshDataSource();
+                gvOrderOrder.RefreshDataSource();
+                gvOrderOrderInventory.RefreshDataSource();
 
                 //delete product gridcontrol
                 dtProduct.Rows.RemoveAt(gridOrderOrderProduct.FocusedRowHandle);
-                gv3.RefreshDataSource();
+                gvOrderOrderProduct.RefreshDataSource();
 
                 //get sum_weight + sum_quantity
                 calculateSumWeight(1);
@@ -473,6 +477,28 @@ namespace PMQuanLy
             resetInventoryGridControl();
             LoadDataInventory();
             MessageBox.Show("Successfully!!!");
+        }
+
+        private void btnProductSync_Click(object sender, EventArgs e)
+        {
+            string products = serviceAppCust.listProduct(9);
+            XElement newxml = XElement.Parse(products);
+            Hashtable hProduct = new Hashtable();
+            var product = from element in newxml.Elements("san_pham") select element;
+            foreach (var item in product)
+            {
+                hProduct.Clear();
+                hProduct.Add("product_code", item.Attribute("ma_sp").Value);
+                hProduct.Add("name", item.Attribute("ten_sp").Value);
+                hProduct.Add("quantity", 0);
+                hProduct.Add("total_weight", 0);
+
+                if (!mProduct.insertNewProduct(hProduct))
+                {
+                    //need to log when error occur later
+                }
+            }
+            LoadDataProduct();
         }
     }
 }

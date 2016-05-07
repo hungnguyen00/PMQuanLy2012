@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:ServiceCustomerControllerwsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="ServiceCustomerController" targetNamespace="urn:ServiceCustomerControllerwsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types />
+  <wsdl:message name="LoginRequest">
+    <wsdl:part name="ten_dang_nhap" type="xsd:string" />
+    <wsdl:part name="mat_khau" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="LoginResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="listProductRequest">
+    <wsdl:part name="id_khach_hang" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="listProductResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getGoodsInfoRequest">
+    <wsdl:part name="qr_code" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getGoodsInfoResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="checkVersionRequest">
+    <wsdl:part name="object" type="xsd:int" />
+    <wsdl:part name="id_khach_hang" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="checkVersionResponse">
+    <wsdl:part name="return" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="syncTransRequest">
+    <wsdl:part name="id_khach_hang" type="xsd:int" />
+    <wsdl:part name="verion" type="xsd:int" />
+    <wsdl:part name="xml" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="syncTransResponse">
+    <wsdl:part name="return" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceCustomerControllerPortType">
+    <wsdl:operation name="Login">
+      <wsdl:documentation>Khach hang dang nhap bang cust_account
+lay ve se tra thong tin KH va luu xml lun.</wsdl:documentation>
+      <wsdl:input message="tns:LoginRequest" />
+      <wsdl:output message="tns:LoginResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="listProduct">
+      <wsdl:documentation>Lay danh sach san pham khoi tao
+Danh cho khach hang.</wsdl:documentation>
+      <wsdl:input message="tns:listProductRequest" />
+      <wsdl:output message="tns:listProductResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getGoodsInfo">
+      <wsdl:documentation>Lay thong tin khoi luong thanh pham.</wsdl:documentation>
+      <wsdl:input message="tns:getGoodsInfoRequest" />
+      <wsdl:output message="tns:getGoodsInfoResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="checkVersion">
+      <wsdl:documentation>Ham nay chi up du lieu 1 chieu len server</wsdl:documentation>
+      <wsdl:input message="tns:checkVersionRequest" />
+      <wsdl:output message="tns:checkVersionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="syncTrans">
+      <wsdl:documentation>Ham nay chi up du lieu 1 chieu len server
+khi cap nhat phien ban moi van con du lieu cu de su dung.</wsdl:documentation>
+      <wsdl:input message="tns:syncTransRequest" />
+      <wsdl:output message="tns:syncTransResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceCustomerControllerBinding" type="tns:ServiceCustomerControllerPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="urn:ServiceCustomerControllerwsdl#Login" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ServiceCustomerControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ServiceCustomerControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listProduct">
+      <soap:operation soapAction="urn:ServiceCustomerControllerwsdl#listProduct" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ServiceCustomerControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ServiceCustomerControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGoodsInfo">
+      <soap:operation soapAction="urn:ServiceCustomerControllerwsdl#getGoodsInfo" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ServiceCustomerControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ServiceCustomerControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkVersion">
+      <soap:operation soapAction="urn:ServiceCustomerControllerwsdl#checkVersion" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ServiceCustomerControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ServiceCustomerControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="syncTrans">
+      <soap:operation soapAction="urn:ServiceCustomerControllerwsdl#syncTrans" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ServiceCustomerControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ServiceCustomerControllerwsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceCustomerControllerService">
+    <wsdl:port name="ServiceCustomerControllerPort" binding="tns:ServiceCustomerControllerBinding">
+      <soap:address location="http://dtcerp.deltatech.vn/index.php?r=serviceCustomer/ServiceCustomer&amp;ws=1" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
