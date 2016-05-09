@@ -363,7 +363,16 @@ namespace PMQuanLy
 
         private void btnOrderSubmit_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Order Successfully!!!");
+            //MessageBox.Show("Order Successfully!!!");
+            saveOrderToDB();
+            LoadDataOrder();
+        }
+        private void saveOrderToDB()
+        {
+            Hashtable htInput = new Hashtable();
+            htInput.Add("total_quantity", lblOrderSumQuantity.Text.ToString());
+            htInput.Add("total_weight", lblOrderSumWeight.Text.ToString());
+            mOrder.saveOrder((DataTable)gvOrderOrderInventory.DataSource, htInput);
         }
 
         private void btnInventoryInsertNew_Click(object sender, EventArgs e)
@@ -409,18 +418,6 @@ namespace PMQuanLy
         }
         private void InsertNewInventory()
         {
-            /*Hashtable hInventory = new Hashtable();
-            hInventory.Add("qr_code", txtInventoryBarCodeInsert.Text.ToString());
-            hInventory.Add("weight", txtInventoryWeightInsert.Text.ToString());
-            hInventory.Add("status", 1);
-            if (mInventory.insertNewInventory(hInventory) == true)
-            {
-                MessageBox.Show("Insert Successfully!!!");
-            }
-            else
-            {
-                MessageBox.Show("Insert Failed!!!");
-            }*/
 
             //validate qr_code
             string[] seperator = { "." };
@@ -474,9 +471,13 @@ namespace PMQuanLy
 
         private void btnInventorySubmit_Click(object sender, EventArgs e)
         {
+            mInventory.insertInventoryList((DataTable)gvInventory.DataSource);
+            if (!gridInventory.IsEmpty)
+            {
+                MessageBox.Show("Successfully!!!");
+            }
             resetInventoryGridControl();
             LoadDataInventory();
-            MessageBox.Show("Successfully!!!");
         }
 
         private void btnProductSync_Click(object sender, EventArgs e)

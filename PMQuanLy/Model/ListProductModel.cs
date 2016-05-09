@@ -54,5 +54,12 @@ namespace PMQuanLy.Model
             }
             return result;
         }
+        public void addQuantityByProductCode(String product_code)
+        {
+            String query = "UPDATE " + table + " SET quantity=quantity+1 WHERE product_code=@product_code";
+            SQLiteParameter[] arrValues = { new SQLiteParameter("product_code", product_code) };
+
+            updateQueryDirectly(query, arrValues);;
+        }
     }
 }

@@ -29,5 +29,11 @@ namespace PMQuanLy.Model
             String group_by = " GROUP BY od.product_code ";
             return selectQuery(select, table_temp, where, arrValues, group_by);
         }
+        public bool insertNewOrderDetail(Hashtable arrCol)
+        {
+            bool result = false;
+            result = insertQuery(table, arrCol);
+            return result;
+        }
     }
 }
